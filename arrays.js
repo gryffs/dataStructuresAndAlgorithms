@@ -31,11 +31,46 @@ console.log(numbers); // logs [1, 2, 3, 4, 5]
 var sum = numbers[0] + numbers[1] + numbers[2];
 console.log(sum) // logs 6
 
+//  thanks to the length property, we can always access the number of elements currently in the array
+
 var total = 0;
 for(var i = 0; i < numbers.length; i++) {
   total += numbers[i];
 }
 console.log(total); // logs 15
+
+//  Creating Arrays from Strings
+
+var statement = "How much wood would a woodchuck chuck";
+var statementArray = statement.split(' ');
+console.log(statementArray) // logs ["How", "much", "wood", "would", "a", "woodchuck", "chuck"]
+
+//  Accessor Functions
+// indexOf() returns the index of the item you are looking for in the array uncless it is not in the array
+// then it will return -1
+
+var names = ['Chad', 'Jill', 'Haley', 'Emma', 'Leah', 'Eli', 'Ezra', 'Jill', 'Charli'];
+console.log(names.indexOf('Tom')); // logs -1
+console.log(names.indexOf('Eli')); // logs 5
+
+//  indexOf() will always give the first occurence of the item you are looking for in the array.
+console.log(names.indexOf('Jill')); // logs 1
+//  lastIndexOf() will return the position of the last occurence
+console.log(names.lastIndexOf('Jill')); // logs 7
+
+// join() and toString() both return a string containing elements of the array
+var namestring = names.join();
+var namestring2 = names.toString();
+console.log(namestring); // logs "Chad,Jill,Haley,Emma,Leah,Eli,Ezra,Jill,Charli"
+console.log(namestring2); // logs "Chad,Jill,Haley,Emma,Leah,Eli,Ezra,Jill,Charli"
+
+// concat() joins two arrays together.  It is done by calling the function from an existing array with its 
+//  argument being another existing array.
+var names1 = ['Chad', 'Jill', 'Haley', 'Emma', 'Leah', 'Eli', 'Ezra', 'Jill', 'Charli'];
+var names2 = ['David', 'Victor', 'Debbie', 'Genevieve'];
+var namesJoined = names1.concat(names2);
+console.log(namesJoined); // logs ["Chad", "Jill", "Haley", "Emma", "Leah", "Eli", "Ezra", "Jill", "Charli", "David", "Victor", "Debbie", "Genevieve"]
+
 
 
 
