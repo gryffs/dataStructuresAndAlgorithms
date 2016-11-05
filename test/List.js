@@ -105,3 +105,28 @@ describe('List.remove', function () {
   });
 
 });
+
+describe('List.length', function () {
+
+  it('should exist', function () {
+    expect(myList.length).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.length).to.be.a('function');
+  });
+
+  it('should return the length of the list', function () {
+    expect(myList.length()).to.equal(2);
+  });
+
+  it('should track the length after appending and removing multiple items', function () {
+    myList.append('onion');
+    myList.append('pepper');
+    myList.append('fish');
+    myList.remove('onion');
+    myList.remove('fish');
+    expect(myList.length()).to.equal(3);
+  });
+
+});
