@@ -174,3 +174,28 @@ describe('List.insert', function () {
   });
 
 });
+
+describe('List.clear', function () {
+
+  it('should exist', function () {
+    expect(myList.clear).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.clear).to.be.a('function');
+  });
+
+  it('should remove all elements from the list', function () {
+    myList.clear();
+    expect(myList.returnList()).to.deep.equal([]);
+  });
+
+  it('should reset the listSize to 0', function () {
+    expect(myList.listSize).to.equal(0);
+  });
+
+  it('shoudl reset the pos to 0', function () {
+    expect(myList.pos).to.equal(0);
+  });
+
+});

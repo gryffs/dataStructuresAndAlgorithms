@@ -48,6 +48,12 @@ class List {
     }
     return false;
   };
+
+  clear() {
+    delete this.dataStore;
+    this.dataStore = [];
+    this.listSize = this.pos = 0;
+  };
 }
 
 module.exports = List;
