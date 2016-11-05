@@ -33,7 +33,13 @@ class List {
 
   length() {
     return this.listSize;
-  }
+  };
+
+  returnList() {
+    return this.dataStore;
+  };
+
+  
 }
 
 module.exports = List;

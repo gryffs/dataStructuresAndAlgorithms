@@ -120,13 +120,57 @@ describe('List.length', function () {
     expect(myList.length()).to.equal(2);
   });
 
-  it('should track the length after appending and removing multiple items', function () {
+  it('should return the correct length after appending and removing multiple items', function () {
     myList.append('onion');
-    myList.append('pepper');
+    myList.append('banana');
     myList.append('fish');
     myList.remove('onion');
     myList.remove('fish');
     expect(myList.length()).to.equal(3);
   });
+
+});
+
+describe('List.returnList', function () {
+
+  it('should exist', function () {
+    expect(myList.returnList).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.returnList).to.be.a('function');
+  });
+
+  it('should return an Array', function () {
+    expect(myList.returnList()).to.be.an.instanceOf(Array);
+  });
+
+  it('should return the list of items', function () {
+    expect(myList.returnList()).to.deep.equal(['grape', 'kiwi', 'banana']);
+  });
+
+});
+
+describe('List.insert', function () {
+
+  it('should exist', function () {
+    expect(myList.insert).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.insert).to.be.a('function');
+  });
+
+  it('should return false on an unsuccessful insertion', function () {
+    expect(myList.insert('cow', 'chicken')).to.equal(false);
+  });
+
+  it('should return true on a successful insertion', function () {
+    expect(myList.insert('apple', 'kiwi')).to.equal(true);
+  });
+
+  it('should insert the element after the specified item', function () {
+    expect(myList.returnList).to.deep.equal(['grape', 'kiwi', 'apple', 'banana']);
+  })
 
 });
