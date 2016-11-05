@@ -31,3 +31,5 @@ class List {
     return false;
   };
 }
+
+module.exports = List;
