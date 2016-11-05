@@ -18,11 +18,16 @@ class List {
   };
 
   find(element) {
-    for(const data of this.dataStore) {
-      if (data === element) {
-        return data;
-      }
+    return this.dataStore.indexOf(element);
+  };
+
+  remove(element) {
+    let foundAt = this.find(element);
+    if (foundAt > -1) {
+      this.dataStore.splice(foundAt, 1);
+      this.listSize--;
+      return true;
     }
-    return -1;
+    return false;
   };
 }
