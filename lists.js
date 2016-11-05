@@ -39,7 +39,15 @@ class List {
     return this.dataStore;
   };
 
-  
+  insert(element, after) {
+    let insertPosition = this.find(after);
+    if (insertPosition > -1) {
+      this.dataStore.splice(insertPosition + 1, 0, element);
+      this.listSize++;
+      return true;
+    }
+    return false;
+  };
 }
 
 module.exports = List;

@@ -170,7 +170,7 @@ describe('List.insert', function () {
   });
 
   it('should insert the element after the specified item', function () {
-    expect(myList.returnList).to.deep.equal(['grape', 'kiwi', 'apple', 'banana']);
-  })
+    expect(myList.returnList()).to.deep.equal(['grape', 'kiwi', 'apple', 'banana']);
+  });
 
 });
