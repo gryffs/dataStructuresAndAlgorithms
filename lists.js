@@ -49,6 +49,10 @@ class List {
     return false;
   };
 
+  contains(element) {
+    return this.dataStore.includes(element);
+  };
+
   clear() {
     delete this.dataStore;
     this.dataStore = [];

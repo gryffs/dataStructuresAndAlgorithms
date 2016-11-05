@@ -195,6 +195,110 @@ describe('List.contains', function () {
 
 });
 
+describe('List.front', function () {
+
+  it('should exist', function () {
+    expect(myList.front).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.front).to.be.a('function');
+  });
+
+  it('should set the pos to 0', function () {
+    myList.pos = 99;
+    expect(myList.pos).to.equal(0);
+  });
+
+});
+
+describe('List.end', function () {
+
+  it('should exist', function () {
+    expect(myList.end).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.end).to.be.a('function');
+  });
+
+  it('should set the pos to the index of the last item in dataStore', function () {
+    expect(myList.pos).to.equal(myList.dataStore.length - 1);
+  });
+
+});
+
+describe('List.next', function () {
+
+  it('should exist', function () {
+    expect(myList.next).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.next).to.be.a('function');
+  });
+
+  it('should incrament pos by one', function () {
+    myList.next();
+    myList.next();
+    expect(myList.pos).to.equal(2);
+  });
+
+});
+
+describe('List.prev', function () {
+
+  it('should exist', function () {
+    expect(myList.prev).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.prev).to.be.a('function');
+  });
+
+  it('should decrament pos by one', function () {
+    myList.prev();
+    expect(myList.pos).to.equal(1);
+  });
+
+});
+
+describe('List.currPos', function () {
+
+  it('should exist', function () {
+    expect(myList.currPos).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.currPos).to.be.a('function');
+  });
+
+});
+
+describe('List.moveTo', function () {
+
+  it('should exist', function () {
+    expect(myList.moveTo).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.moveTo).to.be.a('function');
+  });
+
+});
+
+describe('List.getElement', function () {
+
+  it('should exist', function () {
+    expect(myList.getElement).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.getElement).to.be.a('function');
+  });
+
+});
+
 describe('List.clear', function () {
 
   it('should exist', function () {
