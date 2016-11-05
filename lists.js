@@ -30,6 +30,10 @@ class List {
     }
     return false;
   };
+
+  length() {
+    return this.listSize;
+  }
 }
 
 module.exports = List;
