@@ -175,6 +175,26 @@ describe('List.insert', function () {
 
 });
 
+describe('List.contains', function () {
+
+  it('should exist', function () {
+    expect(myList.contains).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myList.contains).to.be.a('function');
+  });
+
+  it('should return false if the element is not in the list', function () {
+    expect(myList.contains('salt')).to.equal(false);
+  });
+
+  it('should return true if the element is in the list', function () {
+    expect(myList.contains('kiwi')).to.equal(true);
+  });
+
+});
+
 describe('List.clear', function () {
 
   it('should exist', function () {
