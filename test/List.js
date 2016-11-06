@@ -241,7 +241,8 @@ describe('List.next', function () {
   it('should incrament pos by one', function () {
     myList.next();
     myList.next();
-    expect(myList.pos).to.equal(2);
+    myList.next();
+    expect(myList.pos).to.equal(3);
   });
 
 });
@@ -258,6 +259,7 @@ describe('List.prev', function () {
 
   it('should decrament pos by one', function () {
     myList.prev();
+    myList.prev();
     expect(myList.pos).to.equal(1);
   });
 
@@ -273,6 +275,10 @@ describe('List.currPos', function () {
     expect(myList.currPos).to.be.a('function');
   });
 
+  it('should return the current position', function () {
+    expect(myList.currPos()).to.equal(1);
+  });
+
 });
 
 describe('List.moveTo', function () {
@@ -285,6 +291,11 @@ describe('List.moveTo', function () {
     expect(myList.moveTo).to.be.a('function');
   });
 
+  it('should move to a position', function () {
+    myList.moveTo(3);
+    expect(myList.pos).to.equal(3);
+  });
+
 });
 
 describe('List.getElement', function () {
@@ -295,6 +306,10 @@ describe('List.getElement', function () {
 
   it('should be a function', function () {
     expect(myList.getElement).to.be.a('function');
+  });
+
+  it('should return the current position element', function () {
+    expect(myList.getElement()).to.equal('banana');
   });
 
 });
