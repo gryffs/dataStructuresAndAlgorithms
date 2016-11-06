@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
-const List = require('../lists.js');
+const List = require('../List.js');
 
-let myList = new List;
+let myList = new List();
 
 describe('List', function () {
 
