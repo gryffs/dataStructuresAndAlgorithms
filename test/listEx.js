@@ -1,11 +1,22 @@
 const expect = require('chai').expect;
+const fs = require('fs');
 const List = require('../List.js');
 const Person = require('../exercises/listEx.js').Person;
 const sameGenderListBuilder = require('../exercises/listEx.js').sameGenderListBuilder;
+const listFile = __dirname + '/listFiles/fam.txt';
 
 let me = new Person('Chad Griffis', 'Male');
 
 let myFamily = new List();
+const listBuilder = listFile => {
+  let listImport = fs.readFileSync(listFile).toString().trim().split('\n')
+                    .map(name => {return name.split(', ');});
+  listImport.forEach(name => {
+    let member = new Person(name[0], name[1]);
+    myFamily.append(member);
+  });
+};
+listBuilder(listFile);
 
 describe('Person', function () {
 
@@ -46,7 +57,7 @@ describe('sameGenderListBuilder', function () {
   });
 
   it('should return an array of all the people in a list of the same gender', function () {
-    expect(sameGenderListBuilder(myFamily, 'Female')).to.deep.equal(['Jill', 'Haley', 'Emma', 'Leah', 'Charlotte']);
+    expect(sameGenderListBuilder(myFamily, 'female')).to.deep.equal(['Jill', 'Haley', 'Emma', 'Leah', 'Charlotte']);
   });
 
 });

@@ -1,0 +1,8 @@
+Chad, male
+Jill, female
+Haley, female
+Emma, female
+Leah, female
+Eli, male
+Ezra, male
+Charlotte, female
