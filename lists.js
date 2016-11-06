@@ -58,6 +58,39 @@ class List {
     this.dataStore = [];
     this.listSize = this.pos = 0;
   };
+
+  front() {
+    this.pos = 0;
+  };
+
+  end() {
+    this.pos = this.listSize - 1;
+  };
+
+  prev() {
+    if (this.pos > 0) {
+      this.pos--;
+    }
+  };
+
+  next() {
+    if (this.pos < this.listSize - 1) {
+      this.pos++;
+    }
+  };
+
+  currPos() {
+    return this.pos;
+  };
+
+  moveTo(position) {
+    this.pos = position;
+  };
+
+  getElement() {
+    return this.dataStore[this.pos];
+  };
+
 }
 
 module.exports = List;

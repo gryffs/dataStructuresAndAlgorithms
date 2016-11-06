@@ -207,6 +207,7 @@ describe('List.front', function () {
 
   it('should set the pos to 0', function () {
     myList.pos = 99;
+    myList.front();
     expect(myList.pos).to.equal(0);
   });
 
@@ -223,6 +224,7 @@ describe('List.end', function () {
   });
 
   it('should set the pos to the index of the last item in dataStore', function () {
+    myList.end();
     expect(myList.pos).to.equal(myList.dataStore.length - 1);
   });
 
@@ -239,10 +241,17 @@ describe('List.next', function () {
   });
 
   it('should incrament pos by one', function () {
+    myList.front();
+    myList.next();
+    myList.next();
+    expect(myList.pos).to.equal(2);
+  });
+
+  it('should not incrament past the last element in the list', function () {
     myList.next();
     myList.next();
     myList.next();
-    expect(myList.pos).to.equal(3);
+    expect(myList.pos).to.equal(myList.dataStore.length - 1);
   });
 
 });
@@ -263,6 +272,14 @@ describe('List.prev', function () {
     expect(myList.pos).to.equal(1);
   });
 
+  it('should not decrament past 0', function () {
+    myList.prev();
+    myList.prev();
+    myList.prev();
+    myList.prev();
+    expect(myList.pos).to.equal(0);
+  });
+
 });
 
 describe('List.currPos', function () {
@@ -276,6 +293,7 @@ describe('List.currPos', function () {
   });
 
   it('should return the current position', function () {
+    myList.next();
     expect(myList.currPos()).to.equal(1);
   });
 
@@ -333,7 +351,7 @@ describe('List.clear', function () {
     expect(myList.listSize).to.equal(0);
   });
 
-  it('shoudl reset the pos to 0', function () {
+  it('should reset the pos to 0', function () {
     expect(myList.pos).to.equal(0);
   });
 
