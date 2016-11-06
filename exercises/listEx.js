@@ -1,4 +1,3 @@
-const List = require('../List.js');
 // Create a person class that stores a person's name and their gender.
 
 class Person {
@@ -10,9 +9,9 @@ class Person {
 
 // Write a function that displays all the people in the list of the same gender.
 
-const sameGenderList = personObj => {
+const sameGenderListBuilder = (personList, gender) => {
 
 }
 
 
-module.exports = {Person : Person, sameGenderList : sameGenderList};
+module.exports = {Person : Person, sameGenderListBuilder : sameGenderListBuilder};
