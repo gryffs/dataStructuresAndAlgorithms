@@ -8,7 +8,7 @@ const listFile = __dirname + '/listFiles/fam.txt';
 let me = new Person('Chad Griffis', 'Male');
 
 let myFamily = new List();
-const listBuilder = listFile => {
+const listBuilder = listFile => {. // move this
   let listImport = fs.readFileSync(listFile).toString().trim().split('\n')
                     .map(name => {return name.split(', ');});
   listImport.forEach(name => {
