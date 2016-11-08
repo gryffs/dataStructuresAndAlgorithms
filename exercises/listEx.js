@@ -22,8 +22,21 @@ const listBuilder = (listFile, list) => {
 // Write a function that displays all the people in the list of the same gender.
 
 const sameGenderListBuilder = (personList, gender) => {
+  const people = [];
+  let count = 0
+  personList.front();
 
-}
+  while(count < personList.length()) {
+    let person = personList.getElement();
+    if(person.gender === gender) {
+      people.push(person.name);
+    }
+    personList.next();
+    count++;
+  };
+
+  return people;
+};
 
 
 module.exports = {Person : Person, listBuilder : listBuilder, sameGenderListBuilder : sameGenderListBuilder};
