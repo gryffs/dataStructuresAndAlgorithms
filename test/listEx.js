@@ -1,22 +1,15 @@
 const expect = require('chai').expect;
-const fs = require('fs');
 const List = require('../List.js');
 const Person = require('../exercises/listEx.js').Person;
+const listBuilder = require('../exercises/listEx.js').listBuilder;
 const sameGenderListBuilder = require('../exercises/listEx.js').sameGenderListBuilder;
 const listFile = __dirname + '/listFiles/fam.txt';
 
 let me = new Person('Chad Griffis', 'Male');
 
 let myFamily = new List();
-const listBuilder = listFile => {
-  let listImport = fs.readFileSync(listFile).toString().trim().split('\n')
-                    .map(name => {return name.split(', ');});
-  listImport.forEach(name => {
-    let member = new Person(name[0], name[1]);
-    myFamily.append(member);
-  });
-};
-listBuilder(listFile);
+
+listBuilder(listFile, myFamily);
 
 describe('Person', function () {
 
