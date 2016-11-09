@@ -44,3 +44,51 @@ describe('Stack.push', function () {
   });
 
 });
+
+describe('Stack.pop', function () {
+
+  it('should exist', function () {
+    expect(myStack.pop).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myStack.pop).to.be.a('function');
+  });
+
+  it('should decrament the top property with each element poped', function () {
+    myStack.push('three')
+    myStack.pop();
+    myStack.pop();
+    expect(myStack.top).to.equal(1);
+  });
+
+  it('should return the poped element', function () {
+    expect(myStack.pop()).to.equal('one');
+  });
+
+});
+
+describe('Stack.peek', function () {
+
+  it('should exist', function () {
+    expect(myStack.peek).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myStack.peek).to.be.a('function');
+  });
+
+  it('should return the top element of the stack', function () {
+    myStack.push('platter');
+    myStack.push('saucer');
+    myStack.push('bowl');
+    myStack.push('cup')
+    expect(myStack.peek()).to.equal('cup');
+  });
+
+  it('should return undefined for on an empty stack', function () {
+    let emptyStack = new Stack();
+    expect(emptyStack.peek()).to.equal(undefined);
+  });
+
+});
