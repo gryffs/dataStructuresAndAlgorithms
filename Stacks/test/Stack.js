@@ -92,3 +92,36 @@ describe('Stack.peek', function () {
   });
 
 });
+
+describe('Stack.length', function () {
+
+  it('should exist', function () {
+    expect(myStack.length).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myStack.length).to.be.a('function');
+  });
+
+  it('should return the amount of elements in the stack', function () {
+    expect(myStack.length()).to.equal(myStack.top);
+  });
+
+});
+
+describe('Stack.clear', function () {
+
+  it('should exist', function () {
+    expect(myStack.clear).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myStack.clear).to.be.a('function');
+  });
+
+  it('should clear the amount of elements in the stack', function () {
+    myStack.clear();
+    expect(myStack.length()).to.equal(0);
+  });
+
+});
