@@ -1,8 +1,8 @@
 {
-  "name": "datastructuresandalgorithms",
+  "name": "stacks",
   "version": "1.0.0",
-  "description": "Data Structures and Algorithms",
-  "main": "arrays.js",
+  "description": "stacks",
+  "main": "Stack.js",
   "scripts": {
     "test": "mocha test"
   },
