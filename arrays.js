@@ -71,6 +71,33 @@ var names2 = ['David', 'Victor', 'Debbie', 'Genevieve'];
 var namesJoined = names1.concat(names2);
 console.log(namesJoined); // logs ["Chad", "Jill", "Haley", "Emma", "Leah", "Eli", "Ezra", "Jill", "Charli", "David", "Victor", "Debbie", "Genevieve"]
 
+// splice() creates a new array from the contents of an existing array.
+
+var newNames = names1.splice(3, 3);
+console.log(newNames); // logs ["Emma", "Leah", "Eli"]
+// splice() will modify the original array
+console.log(names1); // logs ["Chad", "Jill", "Haley", "Ezra", "Jill", "Charli"]
+
+// slice() creates a new array from the contents of an existing array but does not modify the original array
+var moreNames = names2.slice(1, 3);
+console.log(moreNames);  // logs ["Victor", "Debbie"]
+console.log(names2);  // logs ['David', 'Victor', 'Debbie', 'Genevieve']
+//  slice() can be great for making a copy of an arry without changing the original
+
+var newArray = names2.slice();
+console.log(newArray); // logs ['David', 'Victor', 'Debbie', 'Genevieve']
+newArray[0] = 'Bob';
+console.log(newArray); // logs ['Bob', 'Victor', 'Debbie', 'Genevieve']
+//  original array is still the same
+console.log(names2); // logs ['David', 'Victor', 'Debbie', 'Genevieve']
+
+// Mutator Functions
+// allow you to modify the contents of an array without referencing the individual elements. (making hard
+// techniques easy)
+
+var nums = [1, 2, 3, 4, 5];
+nums.push(6);
+console.log(nums); // logs [1, 2, 3, 4, 5, 6]
 
 
 
