@@ -27,4 +27,24 @@ const factorial = num => {
   return product;
 };
 
-module.exports = {isPalindrome : isPalindrome, factorial : factorial };
+const noLemonPez = pezArry => {
+  let newPez = [];
+  let pezStack1 = new Stack();
+  let pezStack2 = new Stack();
+
+  for (let pez of pezArry) {
+    if (pez !== 'lemon') {
+      pezStack1.push(pez);
+    }
+  }
+  while(pezStack1.length() > 0) {
+    pezStack2.push(pezStack1.pop());
+  }
+  while(pezStack2.length() > 0) {
+    newPez.push(pezStack2.pop())
+  }
+
+  return newPez;
+};
+
+module.exports = {isPalindrome : isPalindrome, factorial : factorial, noLemonPez : noLemonPez };
