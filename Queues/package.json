@@ -1,0 +1,23 @@
+{
+  "name": "queues",
+  "version": "1.0.0",
+  "description": "queues",
+  "main": "Queue.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gryffs/dataStructuresAndAlgorithms.git"
+  },
+  "author": "gryffs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gryffs/dataStructuresAndAlgorithms/issues"
+  },
+  "homepage": "https://github.com/gryffs/dataStructuresAndAlgorithms#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
