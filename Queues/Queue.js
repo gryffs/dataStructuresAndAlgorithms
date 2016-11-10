@@ -11,6 +11,26 @@ class Queue {
   dequeue() {
     return this.dataStore.shift();
   };
+
+  front() {
+    return this.dataStore[0];
+  };
+
+  back() {
+    return this.dataStore[this.dataStore.length - 1];
+  };
+
+  toString() {
+    return this.dataStore.toString('');
+  };
+
+  empty() {
+    return this.dataStore.length ? false : true;
+  };
+
+  count() {
+    return this.dataStore.length;
+  };
 }
 
 module.exports = Queue;
