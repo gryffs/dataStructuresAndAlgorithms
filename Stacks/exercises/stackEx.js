@@ -13,6 +13,18 @@ const isPalindrome = word => {
     return true;
   }
   return false;
-}
+};
 
-module.exports = {isPalindrome : isPalindrome }
+const factorial = num => {
+  let n = new Stack();
+  while (num > 1) {
+    n.push(num--);
+  }
+  let product = 1;
+  while (n.length() > 0) {
+    product *= n.pop();
+  }
+  return product;
+};
+
+module.exports = {isPalindrome : isPalindrome, factorial : factorial };
