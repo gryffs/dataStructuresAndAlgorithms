@@ -1,7 +1,7 @@
 const Queue = require('../Queue.js');
 
 class Deque extends Queue {
-  que(element) {
+  cut(element) {
     this.dataStore.unshift(element);
   }
 };
