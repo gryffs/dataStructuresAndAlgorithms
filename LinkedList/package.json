@@ -1,8 +1,8 @@
 {
-  "name": "lists",
+  "name": "linkedlist",
   "version": "1.0.0",
-  "description": "lists",
-  "main": "List.js",
+  "description": "linkedlist",
+  "main": "LinkedList.js",
   "scripts": {
     "test": "mocha test"
   },
