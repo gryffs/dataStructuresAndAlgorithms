@@ -40,3 +40,59 @@ describe('LinkedList', function () {
   });
 
 });
+
+describe('LinkedList.find', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.find).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.find).to.be.a('function');
+  });
+
+  it('should return null if the element is not found', function () {
+    myLinkedList.insert('bacon', 'head');
+    expect(myLinkedList.find('tofu')).to.equal(null);
+  });
+
+  it('should return the node that has the data being searched for', function () {
+    expect(myLinkedList.find('bacon')).to.deep.equal(myNode);
+  });
+
+});
+
+describe('LinkedList.insert', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.insert).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.insert).to.be.a('function');
+  });
+
+  it('should insert the new element after the passed in element', function () {
+    let tempNode = new Node('lettuce');
+    myLinkedList.insert('lettuce', 'bacon');
+    expect(myLinkedList.find('lettuce')).to.deep.equal(tempNode);
+  });
+
+});
+
+describe('LinkedList.length', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.length).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.length).to.be.a('function');
+  });
+
+  it('should return the length of the LinkedList', function () {
+    myLinkedList.insert('tomato', 'lettuce');
+    expect(myLinkedList.length()).to.equal(3);
+  });
+
+});
