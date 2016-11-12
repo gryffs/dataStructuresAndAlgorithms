@@ -75,7 +75,7 @@ describe('LinkedList.insert', function () {
   it('should insert the new element after the passed in element', function () {
     let tempNode = new Node('lettuce');
     myLinkedList.insert('lettuce', 'bacon');
-    expect(myLinkedList.find('lettuce')).to.deep.equal(tempNode);
+    expect(myLinkedList.find('head')).to.deep.equal(myLinkedList.head);
   });
 
 });
