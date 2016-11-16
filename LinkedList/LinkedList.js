@@ -34,6 +34,17 @@ class LinkedList {
     return currNode;
   };
 
+  findPrevious(item) {
+    let currNode = this.head;
+    while(currNode.next != null) {
+      if(currNode.next.element === item) {
+        return currNode;
+      }
+      currNode = currNode.next;
+    }
+    return null;
+  };
+
 };
 
 module.exports = {Node : Node, LinkedList : LinkedList};

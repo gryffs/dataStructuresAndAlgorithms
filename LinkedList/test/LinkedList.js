@@ -95,3 +95,26 @@ describe('LinkedList.length', function () {
   });
 
 });
+
+describe('LinkedList.findPrevious', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.findPrevious).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.findPrevious).to.be.a('function');
+  });
+
+  it('should return null if the passed in node is not found', function () {
+    expect(myLinkedList.findPrevious('tofu')).to.equal(null);
+  });
+
+  it('should return the previous node of the passed in node', function () {
+    let testList = new LinkedList();
+    testList.insert('lettuce', 'head');
+    testList.insert('tomato', 'lettuce');
+    expect(myLinkedList.findPrevious('tomato')).to.deep.equal(testList.head.next);
+  });
+
+});
