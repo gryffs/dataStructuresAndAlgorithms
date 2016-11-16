@@ -21,6 +21,17 @@ class LinkedList {
       current.next = newNode;
       _count++;
     };
+
+    this.remove = (item) => {
+      let prevNode = this.findPrevious(item);
+      if (prevNode) {
+        prevNode.next = prevNode.next.next;
+        _count--;
+        return item;
+      } else {
+        return null;
+      }
+    };
   };
 
   find(item) {

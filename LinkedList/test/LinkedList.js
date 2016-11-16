@@ -4,6 +4,9 @@ const LinkedList = require('../LinkedList').LinkedList;
 
 let myNode = new Node('bacon');
 let myLinkedList = new LinkedList();
+let testList = new LinkedList();
+testList.insert('lettuce', 'head');
+testList.insert('tomato', 'lettuce');
 
 describe('Node', function () {
 
@@ -111,10 +114,37 @@ describe('LinkedList.findPrevious', function () {
   });
 
   it('should return the previous node of the passed in node', function () {
-    let testList = new LinkedList();
-    testList.insert('lettuce', 'head');
-    testList.insert('tomato', 'lettuce');
     expect(myLinkedList.findPrevious('tomato')).to.deep.equal(testList.head.next);
+  });
+
+});
+
+describe('LinkedList.remove', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.remove).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.remove).to.be.a('function');
+  });
+
+  it('should decrament the length of the LinkedList', function () {
+    myLinkedList.remove('bacon');
+    expect(myLinkedList.length()).to.equal(2);
+  });
+
+  it('should return null if the passed in item is not in the LinkedList', function () {
+    expect(myLinkedList.remove('tofu')).to.equal(null);
+  });
+
+  it('should return the deleted element', function () {
+    expect(myLinkedList.remove('lettuce')).to.equal('lettuce');
+  });
+
+  it('should remove the passed in element from the LinkedList', function () {
+    testList.remove('lettuce');
+    expect(myLinkedList.head).to.deep.equal(testList.head);
   });
 
 });
