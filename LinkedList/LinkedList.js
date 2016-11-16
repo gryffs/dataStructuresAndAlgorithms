@@ -14,20 +14,20 @@ class LinkedList {
       return _count;
     };
 
-    this.insert = (newElement, item) => {
+    this.insert = (newElement, itemToInsertAfter) => {
       let newNode = new Node(newElement);
-      let current = this.find(item);
+      let current = this.find(itemToInsertAfter);
       newNode.next = current.next;
       current.next = newNode;
       _count++;
     };
 
-    this.remove = (item) => {
-      let prevNode = this.findPrevious(item);
+    this.remove = (element) => {
+      let prevNode = this.findPrevious(element);
       if (prevNode) {
         prevNode.next = prevNode.next.next;
         _count--;
-        return item;
+        return element;
       } else {
         return null;
       }
