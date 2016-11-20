@@ -22,6 +22,20 @@ class DoublyLinkedList extends LinkedList {
       _count++;
     };
 
+    this.remove = (element) => {
+      let currNode = this.find(element);
+      if (!(currNode.next === null)) {
+        currNode.previous.next = currNode.next;
+        currNode.next.previous = currNode.previous;
+        currNode.next = null;
+        currNode.previous = null;
+        _count--;
+        return element;
+      } else {
+        return null;
+      }
+    };
+
   };
 
 };

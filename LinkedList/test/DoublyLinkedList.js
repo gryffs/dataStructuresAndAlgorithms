@@ -45,11 +45,28 @@ describe('DoublyLinkedList', function () {
 
 describe('DoublyLinkedList.insert', function () {
 
-  it("should set the new node's previous property to point the previous node", function () {
+  it("should set the new node's previous property to point to the previous node", function () {
     myDoublyLinkedList.insert('CB', 'head');
     myDoublyLinkedList.insert('Victor', 'CB')
     let vicNode = myDoublyLinkedList.find('Victor');
     expect(vicNode.previous).to.deep.equal(myDoublyLinkedList.find('CB'));
+  });
+
+});
+
+describe('DoublyLinkedList.remove', function () {
+
+  it('should remove the passed in element from the DoublyLinkedList', function () {
+    myDoublyLinkedList.insert('Chad', 'Victor');
+    myDoublyLinkedList.insert('Bob', 'Chad');
+    myDoublyLinkedList.insert('Eli', 'Bob');
+    myDoublyLinkedList.remove('Bob');
+    expect(myDoublyLinkedList.find('Bob')).to.equal(null);
+  });
+
+  it('should set the node previous property of the following removed node to the correct previous node', function () {
+    let testNode = myDoublyLinkedList.find('Eli');
+    expect(testNode.previous).to.equal(myDoublyLinkedList.find('Chad'));
   });
 
 });
