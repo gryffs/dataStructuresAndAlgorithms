@@ -70,3 +70,19 @@ describe('DoublyLinkedList.remove', function () {
   });
 
 });
+
+describe('DoublyLinkedList.findLast', function () {
+
+  it('should exist', function () {
+    expect(myDoublyLinkedList.findLast).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myDoublyLinkedList.findLast).to.be.a('function');
+  });
+
+  it('should return the last node in the DoublyLinkedList', function () {
+    expect(myDoublyLinkedList.findLast()).to.deep.equal(myDoublyLinkedList.find('Eli'));
+  });
+
+});

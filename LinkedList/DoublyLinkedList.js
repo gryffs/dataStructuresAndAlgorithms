@@ -38,6 +38,15 @@ class DoublyLinkedList extends LinkedList {
 
   };
 
+
+  findLast() {
+    let currNode = this.head;
+    while(!(currNode.next === null)) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  };
+
 };
 
 module.exports = { DoublyLinkedList : DoublyLinkedList, Node : Node };
