@@ -9,6 +9,20 @@ class Node extends llNode {
 };
 
 class DoublyLinkedList extends LinkedList {
+  constructor() {
+    let _count = 0;
+    super();
+
+    this.insert = (newElement, itemToInsertAfter) => {
+      let newNode = new Node(newElement);
+      let current = this.find(itemToInsertAfter);
+      newNode.next = current.next;
+      newNode.previous = current;
+      current.next = newNode;
+      _count++;
+    };
+
+  };
 
 };
 
