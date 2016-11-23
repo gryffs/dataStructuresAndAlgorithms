@@ -13,6 +13,8 @@ class DoublyLinkedList extends LinkedList {
     let _count = 0;
     super();
 
+    this.head = new Node('head');
+
     this.insert = (newElement, itemToInsertAfter) => {
       let newNode = new Node(newElement);
       let current = this.find(itemToInsertAfter);
@@ -45,6 +47,15 @@ class DoublyLinkedList extends LinkedList {
       currNode = currNode.next;
     }
     return currNode;
+  };
+
+  reverseForEach(callback) {
+    console.log(this.head.previous);
+    let currNode = this.findLast();
+    while(currNode.previous !== null) {
+      callback(currNode.element);
+      currNode = currNode.previous;
+    }
   };
 
 };

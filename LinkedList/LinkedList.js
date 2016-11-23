@@ -47,13 +47,21 @@ class LinkedList {
 
   findPrevious(item) {
     let currNode = this.head;
-    while(currNode.next != null) {
+    while(currNode.next !== null) {
       if(currNode.next.element === item) {
         return currNode;
       }
       currNode = currNode.next;
     }
     return null;
+  };
+
+  forEach(callback) {
+    let currNode = this.head;
+    while (currNode.next !== null) {
+      currNode = currNode.next;
+      callback(currNode.element);
+    }
   };
 
 };

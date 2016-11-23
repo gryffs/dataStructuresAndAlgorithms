@@ -86,3 +86,22 @@ describe('DoublyLinkedList.findLast', function () {
   });
 
 });
+
+describe('DoublyLinkedList.reverseForEach', function () {
+
+  it('should exist', function () {
+    expect(myDoublyLinkedList.reverseForEach).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myDoublyLinkedList.reverseForEach).to.be.a('function');
+  });
+
+  it('should run a callback function on every item in list reverse order', function () {
+    let testArray = [];
+    let answerArray = [ 'Eli', 'Chad', 'Victor', 'CB' ];
+    myDoublyLinkedList.reverseForEach( x => testArray.push(x) );
+    expect(testArray).to.deep.equal(answerArray);
+  });
+
+});

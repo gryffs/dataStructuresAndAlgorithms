@@ -148,3 +148,26 @@ describe('LinkedList.remove', function () {
   });
 
 });
+
+describe('LinkedList.forEach', function () {
+
+  it('should exist', function () {
+    expect(myLinkedList.forEach).to.exist;
+  });
+
+  it('should be a function', function () {
+    expect(myLinkedList.forEach).to.be.a('function');
+  });
+
+  it('should run a callback function on every item in list order', function () {
+    myLinkedList.remove('tomato');
+    myLinkedList.insert('this', 'head');
+    myLinkedList.insert('is', 'this');
+    myLinkedList.insert('fun', 'is');
+    let testArray = [];
+    let answerArray = [ 'this', 'is', 'fun' ];
+    myLinkedList.forEach( x => testArray.push(x) );
+    expect(testArray).to.deep.equal(answerArray);
+  });
+
+});
